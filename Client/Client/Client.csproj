@@ -122,6 +122,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="SinglePlayer\Images\Black.png" />
+    <Resource Include="SinglePlayer\Images\BlackKing.png" />
+    <Resource Include="SinglePlayer\Images\White.png" />
+    <Resource Include="SinglePlayer\Images\WhiteKing.png" />
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
