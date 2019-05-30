@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.Threading;
 namespace Client
 {
     /// <summary>
@@ -20,22 +20,23 @@ namespace Client
     /// </summary>
     public partial class MainWindow : Window
     {
+        SinglePlayer singlePlayerWindow = new SinglePlayer();
         public MainWindow()
         {
+            Application.Current.ShutdownMode = ShutdownMode.OnLastWindowClose;
             InitializeComponent();
-            
         }
 
         private void Single_Player_Menu(object sender, RoutedEventArgs e)
         {
-            MainMenu.Hide();
-            SinglePlayer singlePlayerWindow = new SinglePlayer();
             singlePlayerWindow.Show();
+            MainMenu.Close();
         }
-
         private void Multi_Player_Menu(object sender, RoutedEventArgs e)
         {
             MainMenu.Close();
         }
+
     }
 }
+
