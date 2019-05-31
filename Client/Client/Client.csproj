@@ -65,8 +65,11 @@
     <Compile Include="MultiPlayer\MultiPlayer.xaml.cs">
       <DependentUpon>MultiPlayer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SinglePlayer\SinglePlayer.xaml.cs">
-      <DependentUpon>SinglePlayer.xaml</DependentUpon>
+    <Compile Include="SinglePlayer\Figure.cs" />
+    <Compile Include="SinglePlayer\FigureMove.cs" />
+    <Compile Include="SinglePlayer\GameBoard.cs" />
+    <Compile Include="SinglePlayer\SinglePlayerGameMode.xaml.cs">
+      <DependentUpon>SinglePlayerGameMode.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -84,7 +87,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SinglePlayer\SinglePlayer.xaml">
+    <Page Include="SinglePlayer\SinglePlayerGameMode.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -122,12 +125,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Logos\MainLogo.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="SinglePlayer\Images\Black.png" />
     <Resource Include="SinglePlayer\Images\BlackKing.png" />
     <Resource Include="SinglePlayer\Images\White.png" />
     <Resource Include="SinglePlayer\Images\WhiteKing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Logos\SinglePlayer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Logos\MultiLogo.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
