@@ -6,15 +6,20 @@
         xmlns:local="clr-namespace:Client" mc:Ignorable="d" 
         Title="Shitty Checkers" 
         Height="450" Width="800" Name="MainMenu">
-    <Grid Background="Black">
+    <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Grid.RowSpan="2" Background="Black" Foreground="LightGreen" TextAlignment="Center" FontSize="90" Margin="0,60,0,0" >Shitty Checkers</TextBlock>
-        <Button Grid.Row="2" Background="Black" Foreground="LightGreen" FontSize="40"  Click="Single_Player_Menu">Single Player</Button>
-        <Button Grid.Row="3" Background="Black" Foreground="LightGreen" FontSize="40"  Click="Multi_Player_Menu">Multi Player</Button>
+        <TextBlock Grid.Row="0" Grid.RowSpan="2" Background="White" Foreground="LightGreen" TextAlignment="Center" FontSize="90" Margin="0,40,0,30"><Image Source="C:\Users\Deasmond\source\repos\Winceouse\Shitty_Checkers\Client\Client\Logos\MainLogo.png"></Image></TextBlock>
+        <Button Grid.Row="2" Background="White"  Click="Single_Player_Menu">
+            <Image Source="C:\Users\Deasmond\source\repos\Winceouse\Shitty_Checkers\Client\Client\Logos\SinglePlayer.png">
+            </Image>
+        </Button>
+        <Button Grid.Row="3" Background="White"   Click="Multi_Player_Menu">
+            <Image Source="C:\Users\Deasmond\source\repos\Winceouse\Shitty_Checkers\Client\Client\Logos\MultiLogo.png"></Image>
+        </Button>
     </Grid>
 </Window>

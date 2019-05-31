@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading;
+using Client.SinglePlayer;
+
 namespace Client
 {
     /// <summary>
@@ -20,7 +22,8 @@ namespace Client
     /// </summary>
     public partial class MainWindow : Window
     {
-        SinglePlayer singlePlayerWindow = new SinglePlayer();
+
+        Client.SinglePlayer.SinglePlayerGameMode singlePlayerWindow = new Client.SinglePlayer.SinglePlayerGameMode();
         public MainWindow()
         {
             Application.Current.ShutdownMode = ShutdownMode.OnLastWindowClose;
@@ -29,7 +32,7 @@ namespace Client
 
         private void Single_Player_Menu(object sender, RoutedEventArgs e)
         {
-            singlePlayerWindow.Show();
+           singlePlayerWindow.Show();
             MainMenu.Close();
         }
         private void Multi_Player_Menu(object sender, RoutedEventArgs e)
