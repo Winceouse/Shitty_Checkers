@@ -29,6 +29,6 @@
             <RowDefinition ></RowDefinition>
             <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
-
+        <TextBlock Grid.ColumnSpan="8" TextAlignment="Center" FontSize="25" Name="TurnTitle">Turn :</TextBlock>
     </Grid>
 </Window>

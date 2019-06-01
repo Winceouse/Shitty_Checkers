@@ -35,7 +35,7 @@ namespace Client.SinglePlayer
         }
         public Figure IsPossibleToMove(string color)
         {
-            if (color == "Red")
+            if (color == "White")
             {
                 if ((figure1.row + 2 == figure2.row) && (figure1.column - 2 == figure2.column))
                     return new Figure(figure1.row + 1, figure1.column - 1);
@@ -71,7 +71,7 @@ namespace Client.SinglePlayer
                 if ((figure1.row - 1 == figure2.row) && (figure1.column + 1 == figure2.column))
                     return true;
             }
-            if (color == "Red")
+            if (color == "White")
             {
                 if ((figure1.row + 1 == figure2.row) && (figure1.column - 1 == figure2.column))
                     return true;
