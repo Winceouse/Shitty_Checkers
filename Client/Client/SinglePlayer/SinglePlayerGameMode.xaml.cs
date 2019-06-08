@@ -219,6 +219,7 @@ namespace Client.SinglePlayer
                     Grid.SetColumn(stackPanel, b);
                     Board.Children.Add(stackPanel);
                 }
+
             }
             CreateFigures();
         }
