@@ -37,5 +37,7 @@ namespace Client
         {
             MainMenu.Close();
         }
+       
     }
+    
 }
