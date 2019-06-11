@@ -12,7 +12,7 @@ namespace Client.Proxy1 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Proxy1.IChekkers")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Proxy1.IChekkers", CallbackContract=typeof(Client.Proxy1.IChekkersCallback))]
     public interface IChekkers {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IChekkers/Join")]
@@ -20,6 +20,19 @@ namespace Client.Proxy1 {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IChekkers/Join")]
         System.Threading.Tasks.Task JoinAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IChekkers/MoveMade")]
+        void MoveMade(int oldCoord_X, int oldCoord_Y, int newCoord_X, int newCoord_Y);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IChekkers/MoveMade")]
+        System.Threading.Tasks.Task MoveMadeAsync(int oldCoord_X, int oldCoord_Y, int newCoord_X, int newCoord_Y);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IChekkersCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IChekkers/move")]
+        void move(int oldCoord_X, int oldCoord_Y, int newCoord_X, int newCoord_Y);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -28,25 +41,26 @@ namespace Client.Proxy1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ChekkersClient : System.ServiceModel.ClientBase<Client.Proxy1.IChekkers>, Client.Proxy1.IChekkers {
+    public partial class ChekkersClient : System.ServiceModel.DuplexClientBase<Client.Proxy1.IChekkers>, Client.Proxy1.IChekkers {
         
-        public ChekkersClient() {
+        public ChekkersClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
         }
         
-        public ChekkersClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
+        public ChekkersClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
         }
         
-        public ChekkersClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public ChekkersClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public ChekkersClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public ChekkersClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public ChekkersClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
+        public ChekkersClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
         }
         
         public void Join(string name) {
@@ -55,6 +69,14 @@ namespace Client.Proxy1 {
         
         public System.Threading.Tasks.Task JoinAsync(string name) {
             return base.Channel.JoinAsync(name);
+        }
+        
+        public void MoveMade(int oldCoord_X, int oldCoord_Y, int newCoord_X, int newCoord_Y) {
+            base.Channel.MoveMade(oldCoord_X, oldCoord_Y, newCoord_X, newCoord_Y);
+        }
+        
+        public System.Threading.Tasks.Task MoveMadeAsync(int oldCoord_X, int oldCoord_Y, int newCoord_X, int newCoord_Y) {
+            return base.Channel.MoveMadeAsync(oldCoord_X, oldCoord_Y, newCoord_X, newCoord_Y);
         }
     }
 }

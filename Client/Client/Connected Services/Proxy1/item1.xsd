@@ -7,4 +7,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="MoveMade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oldCoord_X" type="xs:int" />
+        <xs:element minOccurs="0" name="oldCoord_Y" type="xs:int" />
+        <xs:element minOccurs="0" name="newCoord_X" type="xs:int" />
+        <xs:element minOccurs="0" name="newCoord_Y" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="move">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oldCoord_X" type="xs:int" />
+        <xs:element minOccurs="0" name="oldCoord_Y" type="xs:int" />
+        <xs:element minOccurs="0" name="newCoord_X" type="xs:int" />
+        <xs:element minOccurs="0" name="newCoord_Y" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
